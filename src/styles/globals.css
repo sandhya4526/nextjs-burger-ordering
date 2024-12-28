@@ -1,0 +1,45 @@
+/* This imports Tailwind's base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* These are styles that apply to the whole website */
+body {
+  /* We're using Roboto as our main font, with fallbacks */
+  font-family: 'Roboto', Arial, sans-serif;
+  /* This makes the background and text color change smoothly when switching themes */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Removing default margins and padding */
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for when the light theme is active */
+body.light-theme {
+  /* These colors are set somewhere else (probably in a JavaScript file) */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Styles for when the dark theme is active */
+body.dark-theme {
+  /* Same deal here - colors are set elsewhere */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Some general styles that apply across the site */
+
+/* This removes the underline from all links */
+a {
+  @apply no-underline;
+}
+
+/* This makes all buttons change the cursor to a pointer and fade when you hover over them */
+button {
+  @apply cursor-pointer transition-opacity duration-300;
+}
+
+button:hover {
+  @apply opacity-90;
+}
